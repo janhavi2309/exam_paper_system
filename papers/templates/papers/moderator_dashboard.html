@@ -1,0 +1,10 @@
+<h1>Moderator Dashboard</h1>
+{% for paper in papers %}
+    <p>{{ paper.file.name }}
+    <a href="{% url 'request_decryption' paper.id %}">Request Decryption</a>
+    {% if paper.status == "Approved" %}
+    <a href="{% url 'view_decrypted_paper' paper.id %}">View Decrypted</a>
+    <a href="{% url 'review_paper' paper.id %}">Review</a>
+    {% endif %}
+    </p>
+{% endfor %}

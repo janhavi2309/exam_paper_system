@@ -1,0 +1,7 @@
+<h1>Admin Dashboard</h1>
+{% for req in requests %}
+    <p>Paper: {{ req.paper.file.name }}
+    <a href="{% url 'approve_decryption' req.id %}">Approve</a>
+    <a href="{% url 'reject_decryption' req.id %}">Reject</a>
+    </p>
+{% endfor %}
